@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link id="mainStyle" rel="stylesheet" type="text/css" href="css/style.css"/>
+    <title>Peppa guess words</title>
+</head>
+<body>
+<div id="test">
+    <div class="width--100 height--100 overflow-hidden">
+
+        <div v-show="curStatus === GS.IN_PROGRESS" class="guessing-word-display">
+            {{character}}
+        </div>
+        <transition name="bounce">
+            <div v-show="curStatus === GS.ANSWER_ERROR" class="text-align--center answer-error">
+                <img style="width: 800px; height: 600px;" src="svg/pg-error.svg">
+            </div>
+        </transition>
+        <transition name="bounce">
+            <div v-show="curStatus === GS.ANSWER_OK" class="text-align--center answer-error">
+                <img style="width: 800px; height: 600px;" src="pictures/peppa-pig.jpg">
+            </div>
+        </transition>
+    </div>
+    <div class="single-row justify-content-center width--100" style="margin: 10px; position: fixed; bottom: 10px;">
+        <div>
+            <button v-show="curStatus === GS.IN_PROGRESS" class="btn btn-warning" @click="error">错误</button>
+            <button v-show="curStatus === GS.IN_PROGRESS" class="btn btn-primary" @click="bingo">正确</button>
+            <button v-show="curStatus !== GS.IN_PROGRESS" class="btn btn-success" @click="goNext">下一题</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
