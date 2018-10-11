@@ -8,22 +8,18 @@
     <link id="mainStyle" rel="stylesheet" type="text/css" href="css/style.css"/>
     <title>Peppa guess words</title>
 </head>
-<body>
+<body class="overflow-hidden">
 <div id="test">
-    <div class="width--100 height--100 overflow-hidden">
+    <div class="container-fluid overflow-hidden">
 
         <div v-show="curStatus === GS.IN_PROGRESS" class="guessing-word-display">
             {{character}}
         </div>
         <transition name="bounce">
-            <div v-show="curStatus === GS.ANSWER_ERROR" class="text-align--center answer-error">
-                <img style="width: 800px; height: 600px;" src="svg/pg-error.svg">
-            </div>
+            <img v-show="curStatus === GS.ANSWER_ERROR" class="img-absolute-center" src="svg/pg-error.svg">
         </transition>
         <transition name="bounce">
-            <div v-show="curStatus === GS.ANSWER_OK" class="text-align--center answer-error">
-                <img style="width: 800px; height: 600px;" src="pictures/peppa-pig.jpg">
-            </div>
+            <img v-show="curStatus === GS.ANSWER_OK" class="img-absolute-center" src="pictures/peppa-pig.jpg">
         </transition>
     </div>
     <div class="single-row justify-content-center width--100" style="margin: 10px; position: fixed; bottom: 10px;">

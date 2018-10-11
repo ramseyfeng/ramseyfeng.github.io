@@ -27,11 +27,6 @@ html,body{width:100%; height:100%}
     justify-content: center;
 }
 
-.answer-error-box {
-    vertical-align: middle;
-    display: table-cell;
-}
-
 .text-align--center {
     text-align: center;
 }
@@ -51,7 +46,7 @@ html,body{width:100%; height:100%}
         transform: scale(0);
     }
     50% {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
@@ -63,4 +58,10 @@ html,body{width:100%; height:100%}
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
+}
+
+.img-absolute-center {
+    width: 500px; height: 300px;
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    margin: auto;    /* 有了这个就自动居中了 */
 }
