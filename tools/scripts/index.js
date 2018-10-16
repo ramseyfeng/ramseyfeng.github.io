@@ -3,7 +3,7 @@ let gameStatus = {
     ANSWER_OK: 'ANSWER_OK',
     ANSWER_ERROR: 'ANSWER_ERROR'
 };
-let characters = Array.from(new Set(['a', 'b', 'c', 'd', 'e', 'f']));
+let characters = Array.from(new Set(['上', '下', '左', '右', '大', '小', '人', '中', '春', '夏', '秋', '冬', '日', '雨', '男', '女', '爸', '妈', '土', '石', '水', '云', '风', '雷']));
 let charsNeed2Review = [];
 let model = {
     character: characters[0],
